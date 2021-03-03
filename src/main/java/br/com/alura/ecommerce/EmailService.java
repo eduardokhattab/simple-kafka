@@ -12,7 +12,7 @@ public class EmailService {
                         EmailService.class.getSimpleName(),
                         "ECOMMERCE_SEND_EMAIL",
                         emailService::parse,
-                        String.class,
+                        Email.class,
                         new HashMap<>()
                 )
         ) {
@@ -21,7 +21,7 @@ public class EmailService {
         }
     }
 
-    private void parse(ConsumerRecord<String, String> record) {
+    private void parse(ConsumerRecord<String, Email> record) {
         System.out.println("------------------------------------------");
         System.out.println("Send email");
         System.out.println(record.key());
